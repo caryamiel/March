@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :taskdepends
   resources :jobcomments
   resources :jobposts
   resources :profiles

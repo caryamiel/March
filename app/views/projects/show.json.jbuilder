@@ -15,7 +15,8 @@ json.projtalks @project.projtalks do |projtalk|
 end
 
 json.tasks @project.tasks do |task|
-  json.(task, :id, :name, :descriptions,:task_priority, :startDate, :dueDate, :task_confirmation, :task_prerequisite)
+  json.(task, :id, :name,:task_priority, :startDate, :dueDate, :task_confirmation,)
+
 
 
 	json.tmembers task.tmembers do |tmember|
@@ -23,9 +24,10 @@ json.tasks @project.tasks do |task|
 	end	  
 
 
-
-  json.subtasks task.subtasks do |subtask|
-    json.(subtask, :id, :name,:subtask_confirmation)
-
+  json.taskdepends task.taskdepends do |taskdepend|
+    json.(taskdepend, :id, :task_id, :taskdependto_id)
+  end
+   json.taskdependtos task.taskdependtos do |taskdependto|
+    json.(taskdependto, :id, :name)
   end
 end
