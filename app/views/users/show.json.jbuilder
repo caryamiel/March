@@ -1,3 +1,4 @@
+json.projects @user.projects, :id, :name, :startDate, :project_confirm
 
 
 
