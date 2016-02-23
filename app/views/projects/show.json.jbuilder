@@ -7,7 +7,6 @@ json.projectmemberships @project.projectmemberships, :id, :pmember_id, :user_id,
 
 
 
-
 json.tasks @project.tasks do |task|
   json.(task, :id, :name,:task_priority, :startDate, :dueDate, :task_confirmation,)
 
@@ -24,4 +23,18 @@ json.tasks @project.tasks do |task|
    json.taskdependtos task.taskdependtos do |taskdependto|
     json.(taskdependto, :id, :name)
   end
+end
+
+
+json.pretasks @project.pretasks do |pretask|
+  json.(pretask, :id,:name, :opdur,:nordur,:pesdur)
+
+  json.pretaskdependtos pretask.pretaskdependtos do  |pretaskdependto|
+   json.(pretaskdependto, :id, :name)
+  end
+
+  json.pretmembers pretask.pretmembers do |pretmember|
+    json.(pretmember, :id, :name, :user_avatar)
+  end 
+
 end
