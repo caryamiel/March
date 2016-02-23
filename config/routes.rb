@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :pretaskmemberships
+  resources :predepends
+  resources :pretasks
   resources :taskdepends
   resources :jobcomments
   resources :jobposts

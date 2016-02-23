@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
 	has_many :tasks, dependent: :destroy
+	has_many :pretasks, dependent: :destroy
 	belongs_to :user
 
 
