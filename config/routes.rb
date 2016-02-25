@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
+<<<<<<< HEAD
   resources :sendattaches
+=======
+  resources :deliverables
+>>>>>>> da582ee5aefb107dbc37ea16c0fa66a906e4d3ca
   resources :pretaskmemberships
   resources :predepends
   resources :pretasks

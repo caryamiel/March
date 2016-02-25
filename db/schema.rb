@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160225145443) do
+=======
+ActiveRecord::Schema.define(version: 20160225125500) do
+>>>>>>> da582ee5aefb107dbc37ea16c0fa66a906e4d3ca
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -36,7 +40,18 @@ ActiveRecord::Schema.define(version: 20160225145443) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+<<<<<<< HEAD
     t.string   "email"
+=======
+  end
+
+  create_table "delivers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+>>>>>>> da582ee5aefb107dbc37ea16c0fa66a906e4d3ca
   end
 
   create_table "friendships", force: :cascade do |t|
