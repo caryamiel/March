@@ -25,16 +25,13 @@ class SendattachesController < ApplicationController
   # POST /sendattaches.json
   def create
     @sendattach = Sendattach.new(sendattach_params)
-
-    respond_to do |format|
-      if @sendattach.save
-        format.html { redirect_to @sendattach, notice: 'Sendattach was successfully created.' }
-        format.json { render :show, status: :created, location: @sendattach }
-      else
-        format.html { render :new }
-        format.json { render json: @sendattach.errors, status: :unprocessable_entity }
-      end
+    if @sendattach.save
+      SendattachMailer.send_attachment(@sendattach).deliver
+      render json: {status: :success, sendattach: @sendattach}
+    else
+      render json: {status: :failed, sendattach: @sendattach}
     end
+
   end
 
   # PATCH/PUT /sendattaches/1
