@@ -26,15 +26,12 @@ class PretasksController < ApplicationController
   def create
     @pretask = Pretask.new(pretask_params)
 
-    respond_to do |format|
       if @pretask.save
-        format.html { redirect_to @pretask, notice: 'Pretask was successfully created.' }
-        format.json { render :show, status: :created, location: @pretask }
+        render json: {status: :success, pretask: @pretask}
       else
-        format.html { render :new }
-        format.json { render json: @pretask.errors, status: :unprocessable_entity }
+       render json: {status: :failed, pretask: @pretask}
       end
-    end
+
   end
 
   # PATCH/PUT /pretasks/1
