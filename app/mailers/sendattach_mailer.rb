@@ -9,7 +9,7 @@ class SendattachMailer < ApplicationMailer
     @sendattach = sendattach
 
     mail to: sendattach.email, subject: "file is sent from your collegues" do |format|
-    	format.text
+    	format.html
     end  
   end
 end

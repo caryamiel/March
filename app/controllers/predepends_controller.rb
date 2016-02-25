@@ -26,15 +26,12 @@ class PredependsController < ApplicationController
   def create
     @predepend = Predepend.new(predepend_params)
 
-    respond_to do |format|
       if @predepend.save
-        format.html { redirect_to @predepend, notice: 'Predepend was successfully created.' }
-        format.json { render :show, status: :created, location: @predepend }
+         render json: {status: :success, predepend: @predepend}
       else
-        format.html { render :new }
-        format.json { render json: @predepend.errors, status: :unprocessable_entity }
+       render json: {status: :failed, predepend: @predepend}
       end
-    end
+
   end
 
   # PATCH/PUT /predepends/1
@@ -42,11 +39,9 @@ class PredependsController < ApplicationController
   def update
     respond_to do |format|
       if @predepend.update(predepend_params)
-        format.html { redirect_to @predepend, notice: 'Predepend was successfully updated.' }
-        format.json { render :show, status: :ok, location: @predepend }
+       render json: {status: :success, pretask: @pretask}
       else
-        format.html { render :edit }
-        format.json { render json: @predepend.errors, status: :unprocessable_entity }
+       render json: {status: :failed, pretask: @pretask}
       end
     end
   end
