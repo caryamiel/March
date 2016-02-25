@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223091536) do
+ActiveRecord::Schema.define(version: 20160225145443) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20160223091536) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "project_id"
+  end
+
+  create_table "deliverables", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "email"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -125,6 +134,15 @@ ActiveRecord::Schema.define(version: 20160223091536) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sendattaches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "description"
+    t.string   "attachment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "subtasks", force: :cascade do |t|

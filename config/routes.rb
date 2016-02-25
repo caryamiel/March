@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :sendattaches
   resources :pretaskmemberships
   resources :predepends
   resources :pretasks

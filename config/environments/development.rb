@@ -24,7 +24,7 @@ Rails.application.configure do
       port: 587,
       authentication: "login",
       enable_starttls_auto: true,
-      user_name: "Ocolworks@gmail.com",
+      user_name: "ocolworks@gmail.com",
       password: "fuckingawesome",
       :openssl_verify_mode  => 'none'
     }
