@@ -1,4 +1,5 @@
-json.extract! @task,:tmembers, :id, :name, :descriptions, :startDate, :dueDate, :task_priority, :task_confirmation, :task_prerequisite
+json.extract! @task,:tmembers, :id, :name,:earlyStart,:lateStart,
+  :earlyFinish,:lateFinish,:slack,:duration
 json.taskmemberships @task.taskmemberships, :id, :user_id, :task_id, :tmember
 
  json.subtasks @task.subtasks do |subtask|

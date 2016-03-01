@@ -8,7 +8,8 @@ json.projectmemberships @project.projectmemberships, :id, :pmember_id, :user_id,
 
 
 json.tasks @project.tasks do |task|
-  json.(task, :id, :name,:task_priority, :startDate, :dueDate, :task_confirmation,)
+  json.(task, :id, :name,:earlyStart,:lateStart,
+  :earlyFinish,:lateFinish,:slack,:duration)
 
 
 
@@ -34,7 +35,7 @@ json.pretasks @project.pretasks do |pretask|
    json.(pretaskdependto, :id, :name,:activityID)
   end
 
-  
+
   json.pretmembers pretask.pretmembers do |pretmember|
     json.(pretmember, :id, :name, :user_avatar)
   end 
