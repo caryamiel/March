@@ -66,6 +66,6 @@ class PretasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pretask_params
-      params.require(:pretask).permit(:name, :project_id, :user_id,:opdur,:nordur,:pesdur, :activityID )
+      params.require(:pretask).permit(:name, :project_id, :user_id,:opdur,:nordur,:pesdur, :activityID,:earlyStart,:earlyFinish,:lateStart,:lateFinish,:slack,:duration )
     end
 end
