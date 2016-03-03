@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303070308) do
+ActiveRecord::Schema.define(version: 20160303120239) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20160303070308) do
     t.string   "lateStart"
     t.string   "lateFinish"
     t.string   "earlyFinish"
+    t.string   "phase"
   end
 
   create_table "profiles", force: :cascade do |t|
