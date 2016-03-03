@@ -11,7 +11,7 @@ json.pretasks @project.pretasks do |pretask|
   json.(pretask, :id,:name,:activityID, :opdur,:nordur,:pesdur,:earlyStart,:lateStart,:earlyFinish,:lateFinish,:duration,:slack,:phase)
 
   json.pretaskdependtos pretask.pretaskdependtos do  |pretaskdependto|
-   json.(pretaskdependto, :id, :name,:activityID,:phase)
+   json.(pretaskdependto, :id,:name,:activityID,:phase)
   end
 
 
