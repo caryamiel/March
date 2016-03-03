@@ -37,15 +37,11 @@ class PretasksController < ApplicationController
   # PATCH/PUT /pretasks/1
   # PATCH/PUT /pretasks/1.json
   def update
-    respond_to do |format|
       if @pretask.update(pretask_params)
-        format.html { redirect_to @pretask, notice: 'Pretask was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pretask }
+       render json: {status: :success, pretask: @pretask}
       else
-        format.html { render :edit }
-        format.json { render json: @pretask.errors, status: :unprocessable_entity }
-      end
-    end
+        render json: {status: :failed, pretask: @pretasks}
+      end 
   end
 
   # DELETE /pretasks/1
