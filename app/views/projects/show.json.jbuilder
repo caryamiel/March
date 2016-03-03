@@ -8,10 +8,11 @@ json.projectmemberships @project.projectmemberships, :id, :pmember_id, :user_id,
 json.acivityID @project.pretasks, :activityID
 
 json.pretasks @project.pretasks do |pretask|
-  json.(pretask, :id,:name,:activityID, :opdur,:nordur,:pesdur,:earlyStart,:lateStart,:earlyFinish,:lateFinish,:duration,:slack,:phase)
+  json.(pretask, :id,:name,:activityID, :opdur,:nordur,:pesdur,:earlyStart,:lateStart,:earlyFinish,:lateFinish,:duration,:slack,:phase,
+  :critPath)
 
   json.pretaskdependtos pretask.pretaskdependtos do  |pretaskdependto|
-   json.(pretaskdependto, :id,:name,:activityID,:phase)
+   json.(pretaskdependto, :id,:name,:activityID,:phase,:critPath)
   end
 
 
