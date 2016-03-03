@@ -12,7 +12,7 @@ json.pretasks @project.pretasks do |pretask|
   :critPath)
 
   json.pretaskdependtos pretask.pretaskdependtos do  |pretaskdependto|
-   json.(pretaskdependto, :id,:name,:activityID,:phase,:critPath)
+   json.(pretaskdependto, :id,:name,:activityID,:phase,:critPath,:duration)
   end
 
 
