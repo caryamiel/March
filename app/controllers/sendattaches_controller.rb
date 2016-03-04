@@ -26,8 +26,8 @@ class SendattachesController < ApplicationController
   def create
     @sendattach = Sendattach.new(sendattach_params)
     if @sendattach.save
-      SendattachMailer.send_attachment(@sendattach).deliver
       render json: {status: :success, sendattach: @sendattach}
+      SendattachMailer.send_attachment(@sendattach).deliver
     else
       render json: {status: :failed, sendattach: @sendattach}
     end
