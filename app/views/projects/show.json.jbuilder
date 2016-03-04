@@ -18,7 +18,7 @@ json.pretasks @project.pretasks do |pretask|
   
 
   json.passive_predependtos pretask.passive_predependtos do  |passive_predependto|
-   json.(passive_predependto, :id,:name,:activityID,:phase,:critPath,:duration,:earlyFinish)
+   json.(passive_predependto, :id,:name,:activityID,:phase,:critPath,:duration,:earlyFinish,:lateStart)
   end
 
 
