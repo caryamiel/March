@@ -3,7 +3,7 @@ json.extract! @pretask, :id, :name, :opdur, :nordur,:pesdur,:duration,:slack,:ea
 json.pretaskdependtos @pretask.pretaskdependtos do |pretaskdependto|
    json.(pretaskdependto, :id, :name, :activityID,:phase,:critPath,:earlyFinish)
 end
-json.passive_predependtos @	pretask.passive_predependtos do  |passive_predependto|
+json.passive_predependtos @pretask.passive_predependtos do  |passive_predependto|
    json.(passive_predependto, :id,:name,:activityID,:phase,:critPath,:duration,:earlyFinish)
 end
 
