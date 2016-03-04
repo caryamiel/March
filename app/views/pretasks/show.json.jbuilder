@@ -3,8 +3,13 @@ json.extract! @pretask, :id, :name, :opdur, :nordur,:pesdur,:duration,:slack,:ea
 json.pretaskdependtos @pretask.pretaskdependtos do |pretaskdependto|
    json.(pretaskdependto, :id, :name, :activityID,:phase,:critPath,:earlyFinish)
 end
+<<<<<<< HEAD
 json.passive_predependtos @pretask.passive_predependtos do  |passive_predependto|
    json.(passive_predependto, :id,:name,:activityID,:phase,:critPath,:duration,:earlyFinish,:earlyStart)
+=======
+json.passive_predependtos @	pretask.passive_predependtos do  |passive_predependto|
+   json.(passive_predependto, :id,:name,:activityID,:phase,:critPath,:duration,:earlyFinish)
+>>>>>>> parent of 7935141... y
 end
 
 json.pretmembers @pretask.pretmembers do |pretmember|
