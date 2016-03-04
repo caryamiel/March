@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304151434) do
+ActiveRecord::Schema.define(version: 20160304152145) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160304151434) do
     t.string   "earlyFinish"
     t.string   "phase"
     t.string   "critPath"
+    t.string   "duration"
   end
 
   create_table "profiles", force: :cascade do |t|
