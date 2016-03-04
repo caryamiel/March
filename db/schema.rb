@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160303181420) do
     t.integer  "pretmember_id"
   end
 
-  create_table "pretasks", force: :cascade do |t|
+  create_table "pretaskmemberships", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
